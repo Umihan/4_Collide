@@ -36,6 +36,7 @@ namespace ConsoleApplication1
             //Private Methoden
             void show()
             {
+
             }
             void hide()
             {
