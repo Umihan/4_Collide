@@ -49,7 +49,10 @@ namespace ConsoleApplication1
             }
             void collide()
             {
-              
+                Console.SetCursorPosition(posx, posy);  //Hier wird der Cursor auf die Position X,Y gesetzt
+                Console.ForegroundColor = farbe;         // Textfarbe wird gewählt
+                Console.Write("x");                     //Es wird markiert
+                Move();                                 //Die Move Methode wird aufgerufen
             }
             //Öffentliche Methoden
             public void Move()
