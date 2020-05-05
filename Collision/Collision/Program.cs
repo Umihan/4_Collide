@@ -43,6 +43,8 @@ namespace ConsoleApplication1
             }
             void hide()
             {
+                Console.SetCursorPosition(posx, posy); //Hier wird der Cursor auf die Position X,Y gesetzt
+                Console.Write(" ");                    //Es wird gelöscht
 
             }
             void collide()
