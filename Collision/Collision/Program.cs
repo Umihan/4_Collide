@@ -36,13 +36,18 @@ namespace ConsoleApplication1
             //Private Methoden
             void show()
             {
+                Console.SetCursorPosition(posx, posy); //Hier wird der Cursor auf die Position X,Y gesetzt
+                Console.ForegroundColor = farbe;       // Textfarbe wird gewählt
+                Console.Write("■");                     //das Objekt wird gezeichnet
 
             }
             void hide()
             {
+
             }
             void collide()
             {
+              
             }
             //Öffentliche Methoden
             public void Move()
