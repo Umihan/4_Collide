@@ -11,7 +11,7 @@ using System.IO;
  *  b) Ritsch Julian
  *  c) Verdorfer Martin
  *  d) Pircher Marjan
- * 
+ * / Teil C Martin Verdorfer
  * 2020 TFO-Meran
  */
 
