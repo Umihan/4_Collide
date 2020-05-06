@@ -27,12 +27,22 @@ namespace ConsoleApplication1
             // Private Eigenschaften
 
             // Öffentliche Eigenschaften
+            Random random = new Random();
             public int posx, posy;
             public ConsoleColor farbe;
             // Konstruktor
             public einer()
             {
+                farbe = (ConsoleColor)(random.Next(Enum.GetNames(typeof(ConsoleColor)).Length));
+                System.Threading.Thread.Sleep(20);
+                do
+                {
+                    posy = random.Next(0, seite);
+                    posx = random.Next(0, seite);
+                } while (feld[posx, posy] == 1);
+                feld[posx, posy] = 1;      
             }
+
             //Private Methoden
             void show()
             {
