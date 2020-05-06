@@ -11,7 +11,7 @@ using System.IO;
  *  b) Ritsch Julian
  *  c) Verdorfer Martin
  *  d) Pircher Marjan
- * 
+ * / Teil C Martin Verdorfer
  * 2020 TFO-Meran
  */
 
@@ -36,12 +36,23 @@ namespace ConsoleApplication1
             //Private Methoden
             void show()
             {
+                Console.SetCursorPosition(posx, posy); //Hier wird der Cursor auf die Position X,Y gesetzt
+                Console.ForegroundColor = farbe;       // Textfarbe wird gewählt
+                Console.Write("■");                     //das Objekt wird gezeichnet
+
             }
             void hide()
             {
+                Console.SetCursorPosition(posx, posy); //Hier wird der Cursor auf die Position X,Y gesetzt
+                Console.Write(" ");                    //Es wird gelöscht
+
             }
             void collide()
             {
+                Console.SetCursorPosition(posx, posy);  //Hier wird der Cursor auf die Position X,Y gesetzt
+                Console.ForegroundColor = farbe;         // Textfarbe wird gewählt
+                Console.Write("x");                     //Es wird markiert
+                Move();                                 //Die Move Methode wird aufgerufen
             }
             //Öffentliche Methoden
             public void Move()
