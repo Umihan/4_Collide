@@ -77,7 +77,7 @@ namespace ConsoleApplication1
                 {
                     ///Up
                     case 0:
-                        posy = (posy != Console.LargestWindowWidth) ? posy++ : posy--;
+                        posy = (posy != seite) ? posy++ : posy--;
                         break;
 
                     ///Down
@@ -87,7 +87,7 @@ namespace ConsoleApplication1
 
                     ///Right
                     case 2:
-                        posx = (posx != Console.LargestWindowWidth) ? posx++ : posx--;
+                        posx = (posx != seite) ? posx++ : posx--;
                         break;
 
                     ///Left
