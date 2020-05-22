@@ -40,7 +40,7 @@ namespace ConsoleApplication1
                     posy = random.Next(0, seite);
                     posx = random.Next(0, seite);
                 } while (feld[posx, posy] == 1);
-                feld[posx, posy] = 1;      
+                feld[posx, posy] = 1;
             }
 
             //Private Methoden
@@ -57,6 +57,10 @@ namespace ConsoleApplication1
                 Console.Write(" ");                    //Es wird gelöscht
 
             }
+
+            /// <summary>
+            /// i glab des isch folsch //by Ritsch
+            /// </summary>
             void collide()
             {
                 Console.SetCursorPosition(posx, posy);  //Hier wird der Cursor auf die Position X,Y gesetzt
@@ -67,17 +71,53 @@ namespace ConsoleApplication1
             //Öffentliche Methoden
             public void Move()
             {
+                Random rndDirection = new Random();
+                hide();
+                switch (rndDirection.Next(4))
+                {
+                    ///Up
+                    case 0:
+                        posy = (posy != seite) ? posy++ : posy--;
+                        break;
+
+                    ///Down
+                    case 1:
+                        posy = (posy != 0) ? posy-- : posy++;
+                        break;
+
+                    ///Right
+                    case 2:
+                        posx = (posx != seite) ? posx++ : posx--;
+                        break;
+
+                    ///Left
+                    case 3:
+                        posx = (posx != 0) ? posx-- : posx++;
+                        break;
+                }
+
+                ///Kontroliert ob eine Kollision besteht
+                Console.SetCursorPosition(posx, posy);
+                if (Console.Read() == ' ')
+                {
+                    show();
+                }
+                else
+                {
+                    collide();
+                }
+
             }
 
         }
 
         static void Main(string[] args)
         {
-            Console.WindowWidth = seite*2;
+            Console.WindowWidth = seite * 2;
             Console.WindowHeight = seite;
             Console.Clear();
             Random ZG = new Random();
-            int Anzahl=ZG.Next(1,6);
+            int Anzahl = ZG.Next(1, 6);
             einer[] meineEiner = new einer[Anzahl];
             for (int i = 0; i < Anzahl; i++)
             {
